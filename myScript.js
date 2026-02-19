@@ -115,9 +115,10 @@ function checkLogin(){
     var flag = false;
     for(var index in data){
         if (data[index].email==email.value && data[index].password==password.value){
-            alert("condition checked");
-            alert("Email : "+email.value);
-            alert("Password : "+password.value); // , nhi lagana 
+            // alert("condition checked");
+            // alert("Email : "+email.value);
+            // alert("Password : "+password.value); // , nhi lagana 
+            sessionStorage.setItem("email",email.value)
             flag = true;
             break;
         }
@@ -131,4 +132,9 @@ function checkLogin(){
         alert("EmailId or password is incorrect!");
         return false;
     }
+}
+
+function updateFun(index){
+    alert ("index : "+index);
+    var data = JSON.parse(localStorage.getItem("entries"))
 }
