@@ -72,6 +72,7 @@ function getData(){
         email : email.value,
         password:password.value,
         services:services.value,
+        contact:contact.value,
         dob : dob.value,
         gender: gender,
         course: course,
@@ -136,5 +137,11 @@ function checkLogin(){
 
 function updateFun(index){
     alert ("index : "+index);
-    var data = JSON.parse(localStorage.getItem("entries"))
+    var data = JSON.parse(localStorage.getItem("entries"));
+    // alert(data[index].username);
+    // var obj = {
+    //     username : data[index].username
+    // }
+    localStorage.setItem("updateData",JSON.stringify(data[index]))//data of index me sab aajauega alag se object nhi banana pdega 
+    
 }
