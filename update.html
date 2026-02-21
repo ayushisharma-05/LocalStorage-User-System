@@ -1,0 +1,327 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> App landing</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <script src="myScript.js"></script>
+
+   <style>
+    /* Registration box ko screen ke hisaab se set karne ke liye */
+    .login-form {
+        width: 450px !important;
+        max-height: 85vh !important; /* Screen ki 85% height se zyada bada nahi hoga */
+        overflow-y: auto !important; /* Agar content zyada hai to scrollbar aa jayega */
+        padding: 40px 30px !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        scrollbar-width: thin; /* Firefox ke liye scrollbar patla karne ke liye */
+        scrollbar-color: #C86FFF transparent;
+    }
+
+    /* Chrome aur Safari ke liye scrollbar ko sundar banane ke liye */
+    .login-form::-webkit-scrollbar {
+        width: 6px;
+    }
+    .login-form::-webkit-scrollbar-thumb {
+        background-color: #C86FFF;
+        border-radius: 10px;
+    }
+
+    /* Font chota karne ke liye */
+    .login-form h2 {
+        font-size: 22px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .login-form .form-input label {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+        display: block;
+    }
+
+    .login-form .form-input input {
+        font-size: 14px !important;
+        height: 35px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Radio buttons (Male/Female) waali line ke liye */
+    .login-form input[type="radio"] {
+        height: auto !important;
+        width: auto !important;
+        margin-right: 5px !important;
+    }
+    /* Section Headings (Gender, Courses) white color mein */
+    .section-label {
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        display: block !important;
+        margin-top: 15px !important;
+        margin-bottom: 5px !important;
+        text-align: left !important;
+    }
+
+    /* Checkboxes aur Radio buttons ko line mein rakhne ke liye */
+    .inline-radio, .inline-checkbox {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        align-items: center !important;
+        margin-bottom: 10px !important;
+    }
+
+    .inline-radio label, .inline-checkbox label {
+        color: #fff !important;
+        font-size: 13px !important;
+        margin-right: 12px !important;
+        cursor: pointer !important;
+    }
+
+    /* Form box ka scrollable jugaad */
+    .login-form {
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        scrollbar-width: thin;
+    }
+    /* Select box ka main look */
+    .faculty-select {
+        background: rgba(0, 0, 0, 0.5) !important; /* Dark background according to theme */
+        color: rgb(5, 5, 5) !important;
+        border: none !important;
+        border-bottom: 1px solid white !important;
+        width: 100% !important;
+        padding: 10px !important;
+        cursor: pointer !important;
+    }
+
+    /* Sabse important: Options ko visible banana */
+   .faculty-select option {
+        padding: 10px !important;
+    }
+
+    /* Jab dropdown khulega to hover effects ke liye */
+    .faculty-select:focus {
+        outline: none !important;
+    }
+    /* Date input ke andar ka calendar icon dikhane ke liye */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Black icon ko white karne ke liye taaki dark box me dikhe */
+    cursor: pointer;
+    opacity: 1;
+    display: block;
+}
+
+/* Date input ki general styling */
+input[type="date"] {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    color: white !important;
+}
+</style>
+    
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body >
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+
+
+<!-- Register -->
+
+ <main class="login-body" style="background: url('assets/img/hero/h1_hero.png') no-repeat center center / cover;min-height: 100vh;">
+    <!-- Login Admin -->
+     <form class="form-default" action="view.html"  onsubmit="return updateData()">  <!--return ensuers agar true higa tohi aage jayega vafrna nhiu -->
+        
+        <div class="login-form">
+            <!-- logo-login -->
+            <div class="logo-login">
+                <a href="index.html"><img src="assets/img/logo/loder.png" alt=""></a>
+            </div>
+            <!-- hame required ki jahgah alaag functionality try ki h -->
+            <h2>Registration Here</h2>
+            <div class="form-input">
+                <label for="name">Full name</label>
+                <input  type="text" name="username" id="username" placeholder="Full name" >
+            </div>
+            <div class="form-input">
+                <label for="name">Email Address</label>
+                <input type="email" name="email" id="email"  placeholder="Email Address">
+            </div>
+            <div class="form-input">
+                <label for="name">Password</label>
+                <input type="password" name="password" id="password"  placeholder=" Password">
+            </div>
+            <div class="form-input">
+                <label for="name">Mobile Number</label>
+                <input type="text" name="contact" id="contact"  placeholder="Mobile Number">
+            </div>
+            <div class="form-input">
+                <label for="name">Date Of Birth</label>
+                <input type="date" name="dob" id="dob"  placeholder="Date of Birth" >
+            </div>
+           <div class="form-input">
+            <label class="section-label">Select Faculty</label>
+            <select class="form-control faculty-select" id="services" name="services">
+                <option value="">-- Choose One --</option>
+                <option value="urela">MR. Urela</option>
+                <option value="saifat">Mrs. Saifat</option>
+                <option value="yamini">Miss. Yamini</option>
+                <option value="uttam">MR. Uttam</option>
+            </select>
+        </div>
+            <label class="section-label">Gender</label>
+            <div class="inline-radio">
+                <input type="radio" value = "male" name="gender" id="male"  placeholder="Gender" >
+                <label for="male">Male</label>
+                <input type="radio" value = "female" name="gender" id="female"  placeholder="Gender" >
+                <label for="male">Female</label>
+            </div>
+            <label class="section-label">Courses</label>
+            <div class="inline-checkbox">
+                <input type="checkbox" value="Java" name="Java" id="java" >
+                <label for="java">Java Programming</label>
+
+                <input type="checkbox"value="C" name="C" id="C">
+                <label for="C">C++ Programming</label>
+            
+                <input type="checkbox" name="JavaScript"      id="JavaScript" value="JavaScript">
+                <label for="JavaScript">JavaScript</label>
+            
+                <input type="checkbox" name="MERN" id="MERN" value="MERN">
+                <label for="MERN">MERN Stack</label>
+            
+                <input type="checkbox" name="DSA" id="DSA" value="DSA">
+                <label for="DSA">DSA</label>
+            </div>
+
+            <div class="form-input">
+                <label for="name"> Address</label>
+                <input type="address" name="address" id="address"  placeholder="Enter Address">
+            </div>
+            
+            <div class="form-input pt-30">
+                <input type="submit" name="submit" value="Register">
+            </div>
+            <!-- Forget Password -->
+            <a href="login.html" class="registration">login</a>
+        </div>
+       
+    </form>
+     <script>
+        var recievedObj= JSON.parse(localStorage.getItem("updateData"));
+        alert(recievedObj.username);
+        document.getElementById("username").value= recievedObj.username;
+        document.getElementById("email").value= recievedObj.email;
+        document.getElementById("password").value= recievedObj.password;
+        document.getElementById("services").value= recievedObj.services;
+        document.getElementById("contact").value= recievedObj.contact;
+        document.getElementById("dob").value= recievedObj.dob;
+
+        recievedObj.gender=='male' ? document.getElementById("male").checked = true :document.getElementById("female").checked = true ; // checked select hojayega 
+        // checked for seceting course starts
+        const courseArray = recievedObj.course.split(" ");
+
+        if(courseArray.includes("java"))
+            document.getElementById("java").checked = true;
+        
+        if(courseArray.includes("C"))
+            document.getElementById("C").checked = true;
+        
+        if(courseArray.includes("JavaScript"))
+            document.getElementById("JavaScript").checked = true;
+        
+        if(courseArray.includes("MERN"))
+            document.getElementById("MERN").checked = true;
+        
+        if(courseArray.includes("DSA"))
+            document.getElementById("DSA").checked = true;
+        
+        // checked for seceting course starts
+        // alert(recievedObj.course)
+        document.getElementById("address").value= recievedObj.address;
+    </script>
+    <!-- /end login form -->
+</main>
+
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Video bg -->
+    <script src="./assets/js/jquery.vide.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <!-- <script src="./assets/js/jquery.barfiller.js"></script> -->
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+    </body>
+</html>

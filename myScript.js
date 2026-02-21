@@ -112,7 +112,12 @@ function checkLogin(){
     var password = document.getElementById("password");
     alert(email.value+" "+password.value);
     var data = JSON.parse(localStorage.getItem("entries"));// array of object aajayega
+    
     // var obj = data.find((obj)=> (obj.email == email.value && obj.password == password.value));
+    if(!data){
+        alert("No registered users found!");
+        return false;
+    }
     var flag = false;
     for(var index in data){
         if (data[index].email==email.value && data[index].password==password.value){
@@ -138,10 +143,92 @@ function checkLogin(){
 function updateFun(index){
     alert ("index : "+index);
     var data = JSON.parse(localStorage.getItem("entries"));
-    // alert(data[index].username);
-    // var obj = {
-    //     username : data[index].username
-    // }
     localStorage.setItem("updateData",JSON.stringify(data[index]))//data of index me sab aajauega alag se object nhi banana pdega 
-    
+
+    localStorage.setItem("updateIndex",JSON.stringify(index))
+}
+
+function updateData(){
+        var username = document.getElementById("username");
+    if(username.value.trim()==""){
+        alert("UserName Required");
+        return false;
+    }
+
+    var email = document.getElementById("email");
+    if(email.value.trim()==""){
+        alert("Email Required");
+        return false;
+    }
+
+    var password = document.getElementById("password");
+    if(password.value.trim()==""){
+        alert("password Required");
+        return false;
+    }
+
+    var services = document.getElementById("services")
+    if(services.selectedIndex==0){
+        alert("Faculty Required");
+        return false;
+    }
+
+    var dob = document.getElementById("dob");
+    if(dob.value.trim()==""){
+        alert("Date of Birth Required");
+        return false;
+    }
+
+    var contact = document.getElementById("contact");
+    if(contact.value.trim()==""){
+        alert("contact Required");
+        return false;
+    }
+
+    var gender =""
+    var male = document.getElementById("male");
+    var female= document.getElementById("female");
+    if(male.checked==false&& female.checked==false){
+        alert(" Gender Required");
+        return false;
+    }
+    male.checked ? gender = male.value : "";
+    female.checked ? gender = female.value : "";
+   
+    var course=""
+    var java = document.getElementById("java");
+    var C = document.getElementById("C"); 
+    var JavaScript = document.getElementById("JavaScript");
+    var MERN = document.getElementById("MERN");
+    var DSA = document.getElementById("DSA");
+    if (java.checked == false && C.checked == false && JavaScript.checked == false && MERN.checked == false && DSA.checked == false) {
+        alert("Course Required");
+        return false;
+    }
+    java.checked ? course+="java " : " ";
+    C.checked ? course+="C " : " ";
+    JavaScript.checked ? course+="JavaScript " : " ";
+    MERN.checked ? course+="MERN " : " ";
+    DSA.checked ? course+="DSA " : " ";
+
+    var address = document.getElementById("address");
+    if(address.value.trim()==""){
+        alert("Address Required");
+        return false;
+    }
+    var obj = {
+        username : username.value,
+        email : email.value,
+        password:password.value,
+        services:services.value,
+        contact:contact.value,
+        dob : dob.value,
+        gender: gender,
+        course: course,
+        address:address.value
+    }
+
+    // var data = JSON.parse(localStorage.getItem("entries"));
+    alert("Updated Index : "+typeof JSON.parseInt(localStorage.getItem("UpdatedIndex")))
+    data.splice()
 }
