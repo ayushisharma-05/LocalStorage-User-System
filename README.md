@@ -1,26 +1,73 @@
 # LocalStorage User System
 
-This is a frontend user registration and login system built using HTML, CSS, and JavaScript.
+A frontend user registration and authentication system built using HTML, CSS, and Vanilla JavaScript with browser-based data persistence.
 
-The project uses browser LocalStorage to store and manage user data on the client side.
+This project demonstrates how client-side applications can manage user data, authentication flow, and CRUD operations without a backend server.
+
+---
 
 ## Features
 
-- User Registration
-- Duplicate Email Validation
-- Login Authentication
-- Profile Data Display in Table
-- Data Persistence using LocalStorage
+- User Registration with validation
+- Duplicate Email Prevention
+- Login Authentication using sessionStorage
+- Profile Display
+- View All Registered Users in Dynamic Table
+- Update Existing Records
+- Delete Specific Records
+- Persistent Data Storage using LocalStorage
+
+---
 
 ## Tech Stack
 
-- HTML
-- CSS (Template-based UI)
-- JavaScript
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
 - Browser LocalStorage API
+- Browser SessionStorage API
 
-## Note
+---
 
-The UI template was downloaded and customized to implement JavaScript functionality and LocalStorage-based authentication.
+## Core Concepts Implemented
 
-This project is built for learning and practice purposes.
+- DOM Manipulation
+- Event Handling
+- Form Validation
+- JSON.parse() and JSON.stringify()
+- Array Methods (push, splice, index-based updates)
+- Client-side Authentication Logic
+- Dynamic Table Rendering
+
+---
+
+## Project Structure
+
+├── index.html
+├── register.html
+├── login.html
+├── profile.html
+├── update.html
+├── view.html
+├── myScript.js
+
+
+---
+
+## Limitations
+
+- No backend integration
+- Data stored only in browser storage
+- Passwords are not encrypted
+- Data will be cleared if browser storage is removed
+
+---
+
+## Learning Outcome
+
+This project helped strengthen understanding of:
+
+- How frontend-only systems manage state
+- How browser storage works
+- Authentication flow without backend
+- Implementing complete CRUD functionality using JavaScript
