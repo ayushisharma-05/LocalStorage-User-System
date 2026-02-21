@@ -104,7 +104,7 @@
         var data = JSON.parse(localStorage.getItem("entries"));
         var table = "<br><center><h1>List</h1><center></h1><div ><br><table border ='1' cellspacing='0' cellpadding ='8'> <tr><td>S No. </td><td>Name </td><td>Email</td><td>Password </td><td>Contact</td><td>Date of birth </td><td>Faculty </td><td>Gender </td><td>Course </td><td>Address </td><td>Update </td><td>Delete</td></tr>"
         for (var index in data){
-            table+="<tr><td>"+(parseInt(index)+1)+"</td><td>"+data[index].username+"</td><td>"+data[index].email+"</td><td>"+data[index].password+"</td><td>"+data[index].contact+"</td><td>"+data[index].dob+"</td><td>"+data[index].services+"</td><td>"+data[index].gender+"</td><td>"+data[index].course+"</td><td>"+data[index].address+"</td><td><a href='update.html' style='color:green;'onclick = 'updateFun("+index+")'>Update</a></td>" +"<td><a href='#' style='color:red;'>Delete</a></td>"
+            table+="<tr><td>"+(parseInt(index)+1)+"</td><td>"+data[index].username+"</td><td>"+data[index].email+"</td><td>"+data[index].password+"</td><td>"+data[index].contact+"</td><td>"+data[index].dob+"</td><td>"+data[index].services+"</td><td>"+data[index].gender+"</td><td>"+data[index].course+"</td><td>"+data[index].address+"</td><td><a href='update.html' style='color:green;'onclick = 'updateFun("+index+")'>Update</a></td>" +"<td><a href='view.html' style='color:red;' onclick = 'deleteFun("+index+")'>Delete</a></td>"
 
         }
         table +="</table>"

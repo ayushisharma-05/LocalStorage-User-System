@@ -228,7 +228,17 @@ function updateData(){
         address:address.value
     }
 
-    // var data = JSON.parse(localStorage.getItem("entries"));
-    alert("Updated Index : "+typeof JSON.parseInt(localStorage.getItem("UpdatedIndex")))
-    data.splice()
+    var data = JSON.parse(localStorage.getItem("entries"));
+    // alert("UpdateIndex : "+typeof JSON.parse(localStorage.getItem("UpdateIndex")))
+    const index = localStorage.getItem("updateIndex");
+    data.splice(index,1,obj);
+    localStorage.setItem("entries",JSON.stringify(data));
+    alert("data Updated Sucessfully")
+}
+function deleteFun(index){
+    alert ("index : "+index);
+    var data = JSON.parse(localStorage.getItem("entries"));
+    data.splice(index,1)// sirf 1 item delet kro
+    localStorage.setItem("entries",JSON.stringify(data))
+    alert("data deleted Sucessfully")
 }
